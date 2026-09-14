@@ -1,0 +1,19 @@
+html,body,#root{margin:0;min-height:100%;background:#fff}
+*{box-sizing:border-box}
+
+.board-main-only{
+  width:100%;
+  max-width:1920px;
+  margin:0 auto;
+  background:#06143d;
+  font-family:Pretendard,"Noto Sans KR","Segoe UI",Arial,sans-serif;
+}
+
+.board-main-only__image{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0;
+  object-fit:contain;
+  object-position:center top;
+}

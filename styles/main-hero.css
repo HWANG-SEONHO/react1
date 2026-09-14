@@ -1,0 +1,829 @@
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+#root {
+  max-width: none !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: initial !important;
+}
+
+body.board-topbar-only-mode {
+  overflow: hidden;
+  background: #06123d !important;
+}
+
+.board-header-only.board-main-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  isolation: isolate;
+  background: #06123d;
+  font-family: Pretendard, "Noto Sans KR", Arial, sans-serif;
+}
+
+.board-main-screen__image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.board-main-screen__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(3, 12, 46, .14) 0%, rgba(3, 10, 38, .03) 37%, rgba(3, 10, 38, .10) 100%),
+    radial-gradient(circle at 50% 35%, rgba(32, 82, 210, .02), rgba(3, 10, 38, .08) 74%);
+  pointer-events: none;
+}
+
+.board-main-screen__header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.board-main-screen .pknu-topbar {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 1920 해상도 기준 안전영역: 검색창을 줄이고 홀로그램과 겹치지 않게 왼쪽으로 조정 */
+.board-main-hero {
+  position: absolute;
+  z-index: 5;
+  top: 22.5%;
+  left: clamp(540px, 28.5vw, 590px);
+  width: min(500px, 26vw);
+  color: #fff;
+  text-align: left;
+  text-shadow: 0 2px 14px rgba(0, 13, 65, .48);
+}
+
+.board-main-hero__eyebrow {
+  margin: 0 0 14px;
+  font-size: clamp(13px, .86vw, 16px);
+  font-weight: 600;
+  letter-spacing: .34em;
+  color: rgba(244, 249, 255, .94);
+}
+
+.board-main-hero h1 {
+  margin: 0;
+  font-family: "Noto Serif KR", "Nanum Myeongjo", Georgia, serif;
+  font-size: clamp(50px, 3.1vw, 60px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow:
+    0 2px 0 rgba(255,255,255,.24),
+    0 4px 18px rgba(0, 31, 118, .48);
+}
+
+.board-main-hero__copy {
+  margin: 14px 0 20px;
+  font-size: clamp(15px, .92vw, 18px);
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  color: rgba(255,255,255,.97);
+}
+
+.board-main-search {
+  width: 100%;
+  height: 58px;
+  padding: 6px 6px 6px 18px;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) 118px;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  border: 1.5px solid rgba(170, 205, 255, .72);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(17, 40, 105, .34), rgba(10, 27, 79, .42));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    0 0 0 1px rgba(81,151,255,.11),
+    0 0 16px rgba(65, 167, 255, .26),
+    0 10px 22px rgba(2, 11, 45, .12);
+  backdrop-filter: blur(10px);
+}
+
+.board-main-search__icon {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(92, 218, 255, .30));
+}
+
+.board-main-search input {
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.board-main-search input::placeholder {
+  color: rgba(218, 228, 250, .80);
+  opacity: 1;
+}
+
+.board-main-search button {
+  position: relative;
+  height: 100%;
+  min-width: 112px;
+  overflow: hidden;
+  border: 1px solid rgba(122, 238, 255, .95);
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(115deg, #39d6ff 0%, #2e8cff 48%, #b95cff 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.46),
+    inset 0 -2px 0 rgba(52, 41, 159, .26),
+    0 0 12px rgba(61, 221, 255, .72),
+    0 0 22px rgba(137, 76, 255, .46);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.board-main-search button::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 3px;
+  height: 42%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.50), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.board-main-search button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.54),
+    inset 0 -2px 0 rgba(52, 41, 159, .22),
+    0 0 15px rgba(61, 221, 255, .88),
+    0 0 28px rgba(137, 76, 255, .54);
+}
+
+.board-main-search button:active {
+  transform: translateY(0) scale(.99);
+}
+
+/* 하단 3개 패널: 블러 없이 실제 메인이미지가 보이는 투명 패널 */
+.board-side-panel,
+.board-list-panel,
+.board-popular-panel {
+  position: absolute;
+  z-index: 6;
+  bottom: 30px;
+  height: 418px;
+  box-sizing: border-box;
+  border: 1px solid rgba(125, 186, 255, .48);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(5, 24, 69, .80), rgba(2, 15, 48, .80));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    0 10px 24px rgba(2, 11, 45, .20),
+    0 0 16px rgba(75, 143, 255, .14);
+  backdrop-filter: none;
+}
+
+.board-side-panel {
+  left: 38px;
+  width: 230px;
+  padding: 22px 16px 18px;
+  box-sizing: border-box;
+}
+
+.board-side-panel__title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.board-side-panel__title h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.board-side-panel__title svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.board-side-panel__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.board-side-panel__item {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  overflow: hidden;
+  background: transparent;
+  color: rgba(240, 248, 255, .96);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform .18s cubic-bezier(.2,.8,.2,1),
+    color .18s ease,
+    border-color .18s ease,
+    background-color .18s ease,
+    box-shadow .20s ease;
+}
+
+.board-side-panel__item::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -45%;
+  bottom: -45%;
+  left: -28%;
+  width: 17%;
+  transform: skewX(-18deg) translateX(-500%);
+  background: linear-gradient(90deg, transparent, rgba(111, 240, 255, .20), rgba(255, 255, 255, .68), rgba(86, 190, 255, .20), transparent);
+  opacity: 0;
+  transition: transform .42s cubic-bezier(.22,.61,.36,1), opacity .12s linear;
+}
+
+.board-side-panel__item svg {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .18s ease, filter .18s ease;
+}
+
+.board-side-panel__item:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+  border-color: rgba(72, 226, 255, .58);
+  background: rgba(8, 40, 91, .48);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -1px 0 rgba(50,154,255,.12),
+    0 0 0 1px rgba(51,122,255,.10),
+    0 0 11px rgba(60,218,255,.28);
+}
+
+.board-side-panel__item:hover::before {
+  opacity: 1;
+  transform: skewX(-18deg) translateX(880%);
+}
+
+.board-side-panel__item:hover svg {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 5px rgba(74, 228, 255, .55));
+}
+
+.board-side-panel__item.is-active {
+  color: #ffffff;
+  border-color: rgba(78, 229, 255, .86);
+  background: linear-gradient(180deg, rgba(16, 57, 122, .82), rgba(5, 24, 67, .96));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(42,150,255,.30),
+    0 0 0 1px rgba(65,131,255,.22),
+    0 0 9px rgba(55,219,255,.52),
+    0 0 18px rgba(58,93,255,.16);
+}
+
+/* 중앙 게시판: 좌/우 패널과 정확히 같은 높이, 10개 행이 한 화면에 모두 보임 */
+.board-list-panel {
+  left: 298px;
+  right: 498px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 14px 14px 12px;
+  color: #fff;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 52px;
+  gap: 8px;
+}
+
+.board-list-panel__table-wrap {
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(83, 160, 255, .28);
+  border-radius: 14px;
+  background: rgba(4, 23, 67, .30);
+}
+
+.board-list-panel__table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.board-list-panel__table th {
+  height: 34px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(90, 165, 255, .34);
+  background: linear-gradient(180deg, rgba(14, 58, 128, .74), rgba(8, 42, 102, .62));
+  color: rgba(246, 251, 255, .98);
+  font-size: 14px;
+  font-weight: 850;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.board-list-panel__table th:nth-child(1) { width: 9%; }
+.board-list-panel__table th:nth-child(2) { width: 47%; }
+.board-list-panel__table th:nth-child(3) { width: 12%; }
+.board-list-panel__table th:nth-child(4) { width: 22%; }
+.board-list-panel__table th:nth-child(5) { width: 10%; }
+
+.board-list-panel__table td {
+  height: 27px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(96, 153, 229, .17);
+  color: rgba(241, 247, 255, .94);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.board-list-panel__table tbody tr {
+  background: rgba(6, 29, 76, .18);
+  transition: background .18s ease;
+  cursor: pointer;
+}
+
+.board-list-panel__table tbody tr:hover {
+  background: rgba(8, 52, 118, .28);
+}
+
+/* table-row에 pseudo-element를 넣으면 hover 순간 열이 밀릴 수 있다.
+   첫 번째 셀의 inset 선으로 표시해 실제 열 구조는 절대 바꾸지 않는다. */
+.board-list-panel__table tbody tr:hover td:first-child {
+  box-shadow: inset 2px 0 0 rgba(78, 229, 255, .88);
+}
+
+.board-list-panel__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.board-list-panel__title-cell {
+  text-align: left !important;
+  font-weight: 750 !important;
+  color: #fff !important;
+}
+
+.board-list-panel__footer {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.board-list-panel__pagination {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.board-list-panel__pagination button {
+  width: 38px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(89, 177, 255, .46);
+  border-radius: 10px;
+  background: rgba(8, 43, 102, .34);
+  color: #f4f9ff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.board-list-panel__pagination button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(78, 229, 255, .82);
+  box-shadow: 0 0 10px rgba(55, 219, 255, .34);
+}
+
+.board-list-panel__pagination button.is-active {
+  border-color: rgba(122, 238, 255, .95);
+  background: linear-gradient(115deg, #39d6ff 0%, #2e8cff 48%, #7a66ff 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.42),
+    0 0 10px rgba(61, 221, 255, .62),
+    0 0 18px rgba(111, 83, 255, .36);
+}
+
+.board-list-panel__pagination span {
+  color: rgba(226, 237, 255, .82);
+  letter-spacing: .12em;
+  font-weight: 900;
+}
+
+/* 글쓰기 버튼은 검색 버튼과 같은 광원/그라데이션 계열 */
+.board-list-panel__write {
+  grid-column: 3;
+  justify-self: end;
+  position: relative;
+  height: 44px;
+  min-width: 126px;
+  padding: 0 20px;
+  overflow: hidden;
+  border: 1px solid rgba(122, 238, 255, .95);
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #fff;
+  background: linear-gradient(115deg, #39d6ff 0%, #2e8cff 48%, #b95cff 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.46),
+    inset 0 -2px 0 rgba(52, 41, 159, .24),
+    0 0 12px rgba(61, 221, 255, .60),
+    0 0 20px rgba(137, 76, 255, .36);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 850;
+  cursor: pointer;
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.board-list-panel__write::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 3px;
+  height: 42%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.board-list-panel__write svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.board-list-panel__write:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.54),
+    0 0 15px rgba(61, 221, 255, .78),
+    0 0 26px rgba(137, 76, 255, .46);
+}
+
+.board-popular-panel {
+  right: 38px;
+  width: 450px;
+  padding: 18px 16px 14px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.board-popular-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.board-popular-panel__head h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+.board-popular-panel__fire {
+  width: 20px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.board-popular-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 36px);
+  display: grid;
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.board-popular-panel__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: 10px;
+  min-height: 0;
+  padding: 0 2px;
+  border-radius: 11px;
+  transition: background .18s ease;
+  cursor: pointer;
+}
+
+.board-popular-panel__row:hover {
+  background: rgba(8, 52, 118, .28);
+}
+
+.board-popular-panel__row:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(78, 229, 255, .88);
+}
+
+.board-popular-panel__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-weight: 900;
+}
+
+.board-popular-panel__rank.is-medal {
+  font-size: 24px;
+}
+
+.board-popular-panel__rank.is-number {
+  font-size: 15px;
+  color: rgba(250,252,255,.98);
+}
+
+.board-popular-panel__text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(250,252,255,.98);
+}
+
+.board-popular-panel__hit {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(233, 240, 255, .96);
+}
+
+@media (max-width: 1440px) {
+  .board-main-hero {
+    left: 25.5%;
+    width: min(500px, 35vw);
+  }
+
+  .board-side-panel {
+    width: 220px;
+  }
+
+  .board-list-panel {
+    left: 286px;
+    right: 460px;
+  }
+
+  .board-popular-panel {
+    width: 410px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .board-main-hero {
+    top: 21%;
+    left: 27%;
+    width: min(470px, 42vw);
+  }
+
+  .board-main-hero h1 {
+    white-space: normal;
+    font-size: clamp(44px, 4.2vw, 56px);
+  }
+
+  .board-main-search {
+    grid-template-columns: 24px minmax(0, 1fr) 108px;
+    height: 54px;
+  }
+
+  .board-side-panel,
+  .board-list-panel,
+  .board-popular-panel {
+    height: 390px;
+  }
+
+  /* 좁아질수록 좌/우 패널도 같이 줄여 중앙 게시판 영역을 확보한다. */
+  .board-side-panel {
+    left: 18px;
+    width: clamp(170px, 18vw, 208px);
+  }
+
+  .board-popular-panel {
+    right: 18px;
+    width: clamp(270px, 30vw, 340px);
+  }
+
+  .board-list-panel {
+    left: calc(18px + clamp(170px, 18vw, 208px) + 18px);
+    right: calc(18px + clamp(270px, 30vw, 340px) + 18px);
+    min-width: 0;
+    overflow: hidden;
+    padding-inline: 10px;
+  }
+
+  .board-list-panel__table-wrap,
+  .board-list-panel__footer,
+  .board-list-panel__pagination {
+    min-width: 0;
+  }
+
+  .board-list-panel__table th,
+  .board-list-panel__table td {
+    font-size: 12px;
+    padding-inline: 6px;
+  }
+
+  .board-list-panel__pagination {
+    gap: 5px;
+  }
+
+  .board-list-panel__pagination button {
+    width: 30px;
+  }
+
+  .board-list-panel__write {
+    min-width: 98px;
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+
+  .board-popular-panel__row {
+    grid-template-columns: 34px minmax(0,1fr) 42px;
+    gap: 6px;
+  }
+
+  .board-popular-panel__text,
+  .board-popular-panel__hit {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .board-side-panel {
+    left: 12px;
+    width: 154px;
+    padding-inline: 12px;
+  }
+
+  .board-popular-panel {
+    right: 12px;
+    width: 236px;
+    padding-inline: 12px;
+  }
+
+  .board-list-panel {
+    left: 178px;
+    right: 260px;
+  }
+
+  .board-side-panel__item {
+    padding-inline: 10px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .board-popular-panel__head h2 {
+    font-size: 15px;
+  }
+
+  .board-popular-panel__row {
+    grid-template-columns: 28px minmax(0,1fr) 34px;
+    gap: 4px;
+  }
+
+  .board-popular-panel__rank.is-medal { font-size: 19px; }
+  .board-popular-panel__text,
+  .board-popular-panel__hit { font-size: 11px; }
+
+  .board-list-panel__pagination button:nth-of-type(n+6):not(:last-child) {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  /* 이 폭부터는 세 패널을 억지로 겹치지 않고 중앙 게시판을 우선 표시한다. */
+  .board-side-panel,
+  .board-popular-panel {
+    display: none;
+  }
+
+  .board-list-panel {
+    left: 12px;
+    right: 12px;
+  }
+}
+
+.board-list-panel__table tbody tr.is-placeholder,
+.board-popular-panel__row.is-placeholder {
+  cursor: default;
+}
+
+.board-list-panel__table tbody tr.is-placeholder:hover,
+.board-popular-panel__row.is-placeholder:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.board-list-panel__pagination button:disabled {
+  opacity: .34;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}

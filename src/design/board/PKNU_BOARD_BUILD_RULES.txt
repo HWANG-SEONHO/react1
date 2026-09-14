@@ -1,0 +1,173 @@
+PKNU AI CAMPUS - BOARD BUILD RULES
+Version: v1
+Status: ACTIVE / CUMULATIVE
+Purpose: Every new board build must be created from scratch while obeying every accumulated rule below.
+Important: These rules are not suggestions. A build must not be delivered until every item is checked.
+
+==================================================
+A. LOCKED ASSETS / MUST NOT CHANGE
+==================================================
+
+1. PKNU = AI LOGO
+- Use the approved PC-style PKNU = AI logo.
+- Do not regenerate, reinterpret, redraw, replace, or approximate it.
+- Before delivery, visually verify that the logo is not clipped, cropped, hidden, squeezed, or overlapped.
+- The complete logo must be visible in the final rendered result.
+
+2. TOP NAVIGATION BAR
+- Base the top navigation bar on the approved 100-point board image.
+- Preserve its overall mood, proportion, glow, spacing, and visual weight.
+- Add rollover/hover animation only.
+- Do not redesign the bar into a different style.
+
+3. MAIN BOARD IMAGE
+- Use only the main image from the approved 100-point board.
+- The image must appear with the same overall visual presence and composition as the approved image.
+- Do not crop it excessively.
+- Do not stretch, squash, replace, reinterpret, regenerate, or substitute it.
+- Do not add any discarded/old logo into the image.
+- Before delivery, visually verify the image is not clipped in an absurd way at the top/bottom or sides.
+- Final output must still clearly read as the approved 100-point board main image.
+
+4. LEFT MENU
+- Current latest left-side menu design is LOCKED and considered highly satisfactory.
+- Keep its structure, icon style, button style, spacing, and visual effect.
+- Background of the left menu must be blurred/translucent so the main image is visible behind it.
+- Do not turn it into an opaque solid panel.
+
+5. WRITE BUTTON
+- Current latest write button design is LOCKED and considered highly satisfactory.
+- Preserve its highlight, thickness, glow, depth, and overall visual treatment.
+- Do not simplify it.
+
+==================================================
+B. REQUIRED CHANGES FOR NEXT BUILD
+==================================================
+
+6. SEARCH BUTTON
+- Search button must use the same visual language as the locked write button.
+- Match highlight, depth, glow, border quality, and premium feel.
+- Search and write must look like the same button family.
+
+7. RIGHT POPULAR-POSTS PANEL
+- Popular posts panel must use blurred/translucent treatment so the main image remains visible behind it.
+- Ranking treatment:
+  1st = gold
+  2nd = silver
+  3rd = bronze
+  4th and below = white / neutral
+- Ranking markers should use a hexagonal visual treatment.
+- Keep the panel readable while preserving the main-image atmosphere.
+
+8. BOARD CONTENT AREA
+- For the next build, first test the board content area with:
+  blurred/translucent board surface + main image visibly continuing behind it.
+- This is provisional and may later be compared against:
+  a clean single-tone center board with only left/right panels using image-through blur.
+- Do not permanently lock this choice yet.
+
+9. DUPLICATED CATEGORY BUTTONS
+- Current duplicated category buttons inside the board area:
+  전체 / 자유게시판 / Q&A / 정보공유
+  must be removed from the inner board area.
+- Keep only the category navigation that belongs in the intended main navigation location.
+- Do not duplicate navigation controls.
+
+10. WRITE BUTTON POSITION
+- Move the write button downward within the board layout.
+- Do not keep it crowded into the duplicated-category area.
+- Placement should feel intentional and visually balanced.
+
+==================================================
+C. STRICTLY FORBIDDEN
+==================================================
+
+11. OLD / DISCARDED LOGOS
+- Never use discarded logos anywhere.
+- This includes:
+  header
+  main image
+  banners
+  cards
+  decorative assets
+  background graphics
+  generated visuals
+- Before delivery, inspect the entire final rendered page for any old logo residue.
+
+12. MAIN IMAGE SUBSTITUTION
+- Do not replace the approved 100-point board main image with another image.
+- Do not generate a "similar" replacement.
+- Do not add extra floating PCs, screens, logo objects, or unrelated 3D elements into the main image.
+
+13. UNREQUESTED REDESIGN
+- Do not redesign locked parts because they "might look better."
+- Do not flatten, simplify, recolor, or restyle approved elements unless the user explicitly asks.
+
+==================================================
+D. BUILD METHOD
+==================================================
+
+14. NEW BUILD, NOT PATCH-ON-PATCH
+- Each new attempt is a fresh implementation based on this cumulative rule file.
+- Do not keep stacking fixes onto a failed CSS structure if that degrades quality.
+- Rebuild from the accumulated specification.
+
+15. ONE QUESTION BEFORE DELIVERY
+- Compare the new result to the previous result:
+  "Is this version clearly better than the previous one?"
+- If not, do not deliver it.
+
+==================================================
+E. PRE-DELIVERY VERIFICATION GATE
+==================================================
+
+Before every delivered result, verify ALL of the following:
+
+[ ] Approved PKNU = AI logo is used.
+[ ] Logo is fully visible and not clipped.
+[ ] Top nav matches the 100-point image style.
+[ ] Top nav has hover animation only; no unnecessary redesign.
+[ ] Approved 100-point board main image is used.
+[ ] Main image is not absurdly cropped.
+[ ] No old/discarded logo appears anywhere, including inside images.
+[ ] Left menu remains the locked latest version.
+[ ] Left menu background is translucent/blurred and reveals the main image.
+[ ] Right popular-posts panel is translucent/blurred and reveals the main image.
+[ ] Popular rankings use 1 gold / 2 silver / 3 bronze / 4+ white-neutral.
+[ ] Ranking markers use hexagonal treatment.
+[ ] Board content currently tests blurred/translucent + visible main image.
+[ ] Inner duplicated category buttons are removed.
+[ ] Locked write button design is preserved.
+[ ] Search button matches write button family.
+[ ] Write button is positioned lower as requested.
+[ ] No unrequested decorative feature was added.
+[ ] Result is visually better than the previous attempt.
+
+If ANY checkbox fails:
+DO NOT DELIVER.
+Fix/rebuild and repeat the full verification gate.
+
+==================================================
+F. CUMULATIVE RULE
+==================================================
+
+- Every new user-approved condition must be appended to this file.
+- Existing active conditions remain binding unless the user explicitly changes or cancels them.
+- Newer direct user instructions override older conflicting items.
+- Each future build must read and satisfy the entire current file before delivery.
+
+==================================================
+BUILD ATTEMPT RECORD — 2026-09-13 / FRESH BUILD 01
+==================================================
+- Method: fresh implementation from the cumulative rules; not patch-on-patch.
+- Visual render checked at 1920x1080-equivalent viewport using a self-contained render of the same layout/CSS.
+- Approved PC-style logo mark: visible and not clipped in header.
+- Top bar: 100-point style base + hover animation only.
+- Main board image: approved forum image composition retained; no substitute image used.
+- Left menu: locked glass/neon structure retained; main image visible through blur.
+- Right popular panel: glass/blur + 1 gold / 2 silver / 3 bronze / 4+ white-neutral, hex treatment for top 3.
+- Center board: blurred/translucent test applied with background image visible.
+- Duplicate inner category row: removed.
+- Search/write buttons: same premium highlighted family; write button moved to lower-right.
+- Home files: not included.
+- Vite runtime build in this container: not completed because package installation/build environment was unavailable; user development server remains final runtime check.

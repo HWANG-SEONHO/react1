@@ -1,0 +1,46 @@
+/* 1920x1080 test composition only.
+   The supplied top-bar CSS is intentionally untouched so its button effects stay exactly as provided. */
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body.board-topbar-only-mode {
+  margin: 0;
+  overflow: hidden;
+  background: #020817;
+}
+
+.header-main-test {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #020817;
+}
+
+.header-main-test__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-main-test > .pknu-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box;
+}

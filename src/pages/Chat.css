@@ -1,0 +1,110 @@
+/* =========================================================
+   파일명 : pages/Chat.css
+
+   기존 HOME 화면 디자인과 통일
+   - 위쪽 : HOME 메인 배너 스타일
+   - 아래쪽 : HOME '홈화면' 배너 스타일
+   ========================================================= */
+
+
+/* ===== 전체 페이지 ===== */
+.chat-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   위쪽 메인 배너
+   ========================================================= */
+
+.chat-main-banner {
+    width: 100%;
+
+    padding: 28px 24px;
+
+    border: 1px solid #d5e4ff;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #f7fbff 0%,
+        #edf6ff 100%
+    );
+
+    box-sizing: border-box;
+}
+
+
+/* CHAT */
+.chat-main-label {
+    margin-bottom: 34px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #1677ff;
+}
+
+
+/* PKNU AI Campus 채팅 */
+.chat-main-title {
+    margin-bottom: 6px;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #16355f;
+}
+
+
+/* 설명 */
+.chat-main-description {
+    font-size: 14px;
+
+    color: #708198;
+}
+
+
+/* =========================================================
+   아래쪽 배너
+   HOME 화면의 '홈화면' 박스와 같은 스타일
+   ========================================================= */
+
+.chat-sub-banner {
+    width: 100%;
+
+    margin-top: 16px;
+    padding: 24px;
+
+    border: 1px solid #d5e4ff;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #f3f8ff 100%
+    );
+
+    box-sizing: border-box;
+}
+
+
+/* 실시간 채팅 */
+.chat-sub-title {
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #1656ad;
+}
+
+
+/* 서버 연결 상태 */
+.chat-sub-status {
+    margin-top: 14px;
+
+    font-size: 14px;
+
+    color: #51647d;
+}

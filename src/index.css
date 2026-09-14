@@ -1,0 +1,138 @@
+/* =========================================================
+   공통 최소 CSS
+   - 브라우저 기본 여백/크기만 정리한다.
+   - 페이지별 디자인은 styles/design.css에서 관리한다.
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #eef6ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  text-align: center;
+}
+
+/* Both headers reserve separate space for the brand, navigation and account.
+   Move navigation to its own row before the three groups collide. */
+:root { --campus-header-height: 86px; }
+#root :is(.site-brandbar, .pknu-topbar) {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: clamp(12px, 2vw, 32px);
+}
+#root :is(.site-brandbar__nav, .pknu-topbar__nav) { min-width: 0; }
+#root :is(.site-brandbar__right, .pknu-topbar__right) {
+  min-width: max-content;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+@media (max-width: 1280px) {
+  :root { --campus-header-height: 140px; }
+  #root :is(.site-brandbar, .pknu-topbar) {
+    height: var(--campus-header-height);
+    padding: 0 20px 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 78px 54px;
+    column-gap: 16px;
+  }
+  #root :is(.site-brandbar__brand, .pknu-topbar__brand) {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  #root :is(.site-brandbar__right, .pknu-topbar__right) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #root :is(.site-brandbar__nav, .pknu-topbar__nav) {
+    position: static;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    height: 54px;
+    margin: 0;
+    padding: 4px;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 12px;
+    background: rgba(4, 19, 58, .82);
+  }
+  #root :is(.site-brandbar__nav-btn, .pknu-topbar__nav-btn) {
+    min-width: 90px;
+    height: 44px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+  #root .site-brand-page__content { padding-top: var(--campus-header-height); }
+  #root .notification-popover {
+    top: calc(var(--campus-header-height) + 8px);
+    max-height: calc(100dvh - var(--campus-header-height) - 24px);
+    max-width: calc(100vw - 28px);
+    right: 14px;
+  }
+}
+@media (max-width: 600px) {
+  :root { --campus-header-height: 124px; }
+  #root :is(.site-brandbar, .pknu-topbar) {
+    padding: 0 10px 6px;
+    grid-template-rows: 64px 54px;
+    column-gap: 6px;
+  }
+  #root :is(.site-brandbar__brand, .pknu-topbar__brand) { gap: 5px; }
+  #root :is(.site-brandbar__mark, .pknu-topbar__mark) {
+    width: 32px;
+    height: 36px;
+    flex-basis: 32px;
+  }
+  #root :is(.site-brandbar__text, .pknu-topbar__brand-text) { min-width: 0; }
+  #root :is(.site-brandbar__text, .pknu-topbar__brand-text) strong {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #root :is(.site-brandbar__text, .pknu-topbar__brand-text) > span {
+    font-size: 7px;
+    letter-spacing: .4px;
+    white-space: nowrap;
+  }
+  #root :is(.site-brandbar__right, .pknu-topbar__right) { gap: 4px; }
+  #root :is(.site-brandbar__bell, .pknu-topbar__bell) { width: 30px; height: 36px; padding: 4px; }
+  #root :is(.site-brandbar__user, .site-brandbar__logout, .pknu-topbar__user, .pknu-topbar__logout) {
+    font-size: 11px;
+    padding: 5px 3px;
+    min-width: 0;
+  }
+  #root :is(.site-brandbar__divider, .pknu-topbar__divider) { margin: 0; }
+  #root :is(.site-brandbar__nav, .pknu-topbar__nav) { gap: 4px; }
+  #root :is(.site-brandbar__nav-btn, .pknu-topbar__nav-btn) {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 3px;
+    font-size: 11px;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 1.2;
+  }
+  #root :is(.site-brandbar__nav-btn, .pknu-topbar__nav-btn) svg { width: 16px; height: 16px; }
+  #root :is(.home-brand-page__hero, .item-runtime-title) {
+    top: max(17%, calc(var(--campus-header-height) + 18px));
+  }
+}

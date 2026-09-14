@@ -1,0 +1,19 @@
+.board-hero{
+  position:relative;
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background:#07162f;
+}
+.board-hero__image{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+  object-fit:contain;
+  object-position:center;
+  margin:0;
+  padding:0;
+  border:0;
+}

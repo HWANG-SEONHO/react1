@@ -1,0 +1,150 @@
+/* =========================================================
+   파일명 : pages/mypage/ChangePW.css
+
+   ChangePW.jsx 디자인 전용 파일
+
+   학습 핵심
+   - JSX : 기능과 화면 구조
+   - CSS : 위치, 크기, 간격, 색상, 테두리
+   ========================================================= */
+
+
+/* ===== 전체 영역 ===== */
+.change-pw {
+    width: 100%;
+}
+
+
+/* =========================================================
+   입력 Form
+   ========================================================= */
+
+.change-pw-form {
+    width: 100%;
+    max-width: 540px;
+
+    margin: 24px auto 0;
+    padding: 10px 20px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* label + input 한 줄 */
+.change-pw-row {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 14px;
+}
+
+
+/* 왼쪽 항목 이름 */
+.change-pw-label {
+    width: 145px;
+
+    margin-right: 18px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #16355f;
+
+    text-align: right;
+}
+
+
+/* 암호 입력창 */
+.change-pw-input {
+    width: 250px;
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d3d8e2;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* 아직 입력하지 않았을 때 보이는 안내 문구 */
+.change-pw-input::placeholder {
+    color: #a7afbb;
+}
+
+
+/* input 클릭 상태 */
+.change-pw-input:focus {
+    border-color: #1677ff;
+}
+
+
+/* =========================================================
+   버튼 영역
+   ========================================================= */
+
+.change-pw-button-area {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 22px;
+    margin-left: 163px;
+}
+
+
+/* 암호변경 버튼 */
+.change-pw-submit {
+    min-width: 92px;
+    height: 38px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #1677ff;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* 암호변경 버튼에 마우스를 올렸을 때 */
+.change-pw-submit:hover {
+    background: #0958d9;
+}
+
+
+/* 취소 버튼 */
+.change-pw-cancel {
+    min-width: 70px;
+    height: 38px;
+
+    padding: 0 18px;
+
+    border: 1px solid #91b5ff;
+    border-radius: 6px;
+
+    background: white;
+    color: #315fbd;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* 취소 버튼에 마우스를 올렸을 때 */
+.change-pw-cancel:hover {
+    background: #f2f6ff;
+}
