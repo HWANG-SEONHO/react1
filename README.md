@@ -1,74 +1,111 @@
 <div align="center">
 
-# 🌌 PKNU AI Campus
+# PKNU AI Campus
 
 ### React 기반 캠퍼스 통합 웹 서비스
 
-물품 거래 · 게시판 · 회원 기능 · 실시간 채팅을 하나의 UI로 구성한 React 프로젝트입니다.
+물품 거래 · 커뮤니티 · 회원 관리 · 실시간 채팅을 하나의 화면 흐름으로 구성한 React 학습 프로젝트입니다.
 
 <br />
 
 ![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Redux](https://img.shields.io/badge/Redux_Toolkit-2.12-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2.12-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-1.20-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
-![MQTT](https://img.shields.io/badge/MQTT-5.15-660066?style=for-the-badge&logo=mqtt&logoColor=white)
+![MQTT](https://img.shields.io/badge/MQTT.js-5.15-660066?style=for-the-badge&logo=mqtt&logoColor=white)
 
 <br />
 
-<img src="./src/assets/brand/home-campus-people-clean.png" alt="PKNU AI Campus" width="900" />
+<img src="./src/assets/brand/home-campus-people-clean.png" alt="PKNU AI Campus main visual" width="920" />
 
 </div>
 
 ---
 
-## 📌 프로젝트 소개
+## Project Overview
 
-**PKNU AI Campus**는 캠퍼스 안에서 사용할 수 있는 여러 기능을 하나의 React 애플리케이션으로 구성한 프로젝트입니다.
+**PKNU AI Campus**는 캠퍼스 안에서 필요한 기능을 하나의 SPA로 연결한 프로젝트입니다.
 
-단순 화면 구현에 그치지 않고 **React Router를 이용한 페이지 이동, Axios 기반 REST API 통신, 로그인 상태 관리, 파일 업로드, 검색·페이지네이션, MQTT 실시간 채팅**까지 연결했습니다.
-
-또한 공부할 때 기능 흐름을 쉽게 읽을 수 있도록 **학습용 기능 코드와 디자인 코드를 가능한 분리**하고, 주요 파일에는 상태 → 이벤트 → API → 화면 갱신 흐름을 확인할 수 있는 주석을 정리했습니다.
+React의 상태 관리와 라우팅에서 시작해 REST API 통신, 인증 토큰 저장, 이미지 업로드, 검색·페이지네이션, MQTT 실시간 채팅까지 직접 연결했습니다. 또한 학습할 때 기능 흐름을 쉽게 읽을 수 있도록 **기능 코드와 디자인 코드를 가능한 분리**하고, 핵심 파일에는 `state → event → API → response → render` 흐름을 따라갈 수 있는 주석을 정리했습니다.
 
 ---
 
-## ✨ 주요 기능
+## Main Screen
+
+### 물품목록
+
+<img src="./docs/images/item-list.png" alt="물품목록 화면" width="100%" />
+
+- 서버 목록 조회 및 검색
+- 페이지네이션
+- 카드형 물품 UI
+- 이미지 비율 유지 표시
+- 검색어와 페이지 상태에 따른 재조회
+
+---
+
+## Design Gallery
+
+> 아래 이미지는 각 페이지에 사용되는 프로젝트 디자인 자산입니다.
+
+<table>
+  <tr>
+    <td align="center"><b>Login</b></td>
+    <td align="center"><b>Board</b></td>
+  </tr>
+  <tr>
+    <td><img src="./src/assets/brand/login-campus-clean.png" alt="Login visual" /></td>
+    <td><img src="./src/assets/board-main-approved-v2.png" alt="Board visual" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Chat</b></td>
+    <td align="center"><b>Campus Home</b></td>
+  </tr>
+  <tr>
+    <td><img src="./src/assets/brand/chat-campus.png" alt="Chat visual" /></td>
+    <td><img src="./src/assets/brand/home-campus-people-clean.png" alt="Home visual" /></td>
+  </tr>
+</table>
+
+---
+
+## Features
 
 | 기능 | 구현 내용 |
 |---|---|
-| 🏠 **홈** | 주요 메뉴 이동, 물품 검색어 전달 |
-| 📦 **물품목록** | API 목록 조회, 검색, 페이지네이션, 이미지 표시 |
-| ➕ **물품등록** | 입력 상태 관리, 이미지 미리보기, `FormData` 파일 업로드 |
-| 📝 **게시판** | 게시글 목록 조회, 검색, 페이지 이동, 상세 페이지 이동 |
-| ✍️ **글쓰기** | Controlled Input, POST 요청, 등록 후 목록 이동 |
-| 🔐 **로그인** | 로그인 API, 토큰 저장, 로그인 유지 선택 |
-| 👤 **마이페이지** | 회원정보 조회·수정, 비밀번호 변경 |
-| 💬 **채팅** | MQTT 연결, 메시지 송수신, 연결 종료 cleanup |
+| **Home** | 주요 메뉴 이동, 홈 검색어를 물품목록 query string으로 전달 |
+| **Item List** | Axios GET, 검색, 페이지네이션, 목록 카드 렌더링 |
+| **Item Insert** | 입력 상태 관리, 이미지 미리보기, `FormData` 업로드 |
+| **Board** | 게시글 목록 조회, 검색, 페이지 이동, 상세 화면 연결 |
+| **Board Write** | Controlled Input, POST 요청, 등록 후 목록 이동 |
+| **Login / Join** | 로그인·회원가입 API, 입력 검증, 인증 토큰 저장 |
+| **My Page** | 회원정보 변경, 비밀번호 변경 화면 전환 |
+| **Chat** | MQTT 연결, topic 구독·발행, cleanup 처리 |
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 
 - **React 19** — 컴포넌트 기반 UI
-- **Vite 8** — 개발 서버 / 빌드 환경
+- **Vite 8** — 개발 서버 및 빌드 환경
 - **React Router DOM 7** — SPA 라우팅
-- **Redux Toolkit + React Redux** — 로그인 상태 공유
+- **Redux Toolkit / React Redux** — 전역 로그인 상태 관리
 - **Axios** — REST API 통신
-- **Ant Design** — UI 컴포넌트 활용
-- **MQTT.js** — 실시간 채팅 연결
+- **Ant Design** — UI 컴포넌트
+- **MQTT.js** — 실시간 메시지 연결
 
-### Styling
+### UI / Styling
 
-- CSS 기반 커스텀 UI
-- Glass / Neon 스타일의 캠퍼스 테마
-- 기능 JSX와 디자인 레이어를 가능한 분리
-- 공통 헤더·쉘·게시판 디자인 컴포넌트 재사용
+- CSS 기반 커스텀 디자인
+- Glass / Neon 계열 캠퍼스 테마
+- 공통 `SiteShell`, Header, Board 디자인 컴포넌트 재사용
+- 기능 JSX와 디자인 레이어 분리
 
 ---
 
-## 🧭 화면 구성
+## Application Routes
 
 ```text
 /
@@ -85,124 +122,116 @@
 
 ---
 
-## 🔄 주요 동작 흐름
+## Core Flow
 
 ```mermaid
 flowchart LR
-    A[사용자 입력] --> B[React State]
-    B --> C[이벤트 핸들러]
+    A[User Input] --> B[React State]
+    B --> C[Event Handler]
     C --> D[Axios / MQTT]
-    D --> E[Backend API / Broker]
-    E --> F[응답 데이터]
-    F --> G[State 갱신]
-    G --> H[화면 재렌더링]
+    D --> E[API / Broker]
+    E --> F[Response]
+    F --> G[State Update]
+    G --> H[Re-render]
 ```
 
-### 예: 물품목록
+### Example — Item Search
 
 ```text
 검색어 입력
    ↓
 query state 변경
    ↓
-검색 버튼 submit
+검색 submit
    ↓
-searchText 확정 + page 1 초기화
+searchText 확정 + page = 1
    ↓
 useEffect 실행
    ↓
 Axios GET
    ↓
-서버 응답 → rows / total
+rows / total 갱신
    ↓
 map()으로 카드 렌더링
 ```
 
 ---
 
-## 📂 프로젝트 구조
+## Project Structure
 
 ```text
 react1/
 ├─ src/
-│  ├─ assets/       이미지 / 브랜드 리소스
+│  ├─ assets/       페이지 이미지 / 브랜드 리소스
 │  ├─ design/       표시 중심 디자인 컴포넌트
-│  ├─ pages/        실제 페이지 기능 코드
+│  ├─ pages/        페이지 기능 코드
 │  ├─ reducers/     Redux 상태 관리
-│  ├─ styles/       페이지 / 공통 디자인 CSS
+│  ├─ styles/       페이지 / 공통 CSS
 │  ├─ utils/        인증 / 채팅 공통 로직
 │  ├─ App.jsx       URL ↔ 페이지 연결
 │  └─ main.jsx      React 앱 시작점
+│
+├─ docs/
+│  └─ images/       README용 실제 화면 이미지
 │
 ├─ package.json
 ├─ vite.config.js
 └─ README.md
 ```
 
-### 코드 분리 원칙
+### 기능 코드와 디자인 코드 분리
 
 ```text
-기능 코드
-  pages / utils / reducers
-       ↓
+pages / utils / reducers
+        ↓
 state · event · API · navigation
 
-디자인 코드
-  design / styles
-       ↓
+          VS
+
+design / styles
+        ↓
 layout · color · effect · reusable UI
 ```
 
-기능 흐름을 공부할 때 CSS와 시각 효과 때문에 핵심 로직이 가려지지 않도록 구성하는 것을 목표로 했습니다.
+디자인을 수정할 때 기능 로직을 건드리는 범위를 줄이고, 학습할 때는 기능 흐름만 빠르게 찾을 수 있도록 구성했습니다.
 
 ---
 
-## 🧠 이 프로젝트에서 익힌 것
+## What I Learned
 
-- `useState`로 입력값과 화면 상태 관리
-- `useEffect`로 페이지 진입 / 상태 변화에 따른 API 호출
+- `useState`를 이용한 입력값·화면 상태 관리
+- `useEffect`의 의존성 변화와 API 재호출 흐름
 - `map()`을 이용한 서버 데이터 반복 렌더링
-- `React Router`의 `Route`, `navigate`, query string 사용
+- `Route`, `navigate`, query string 기반 페이지 연결
 - Axios `GET / POST / PUT` 요청 흐름
-- `FormData`를 이용한 이미지 업로드
-- 로그인 토큰과 `localStorage / sessionStorage` 관리
-- Redux를 이용한 전역 로그인 상태 공유
-- MQTT 연결 / 구독 / 발행 / cleanup 흐름
+- `FormData`를 이용한 이미지 파일 업로드
+- `localStorage / sessionStorage`를 이용한 로그인 유지
+- Redux를 이용한 전역 인증 상태 공유
+- MQTT 연결 / 구독 / 발행 / cleanup
 - 기능 코드와 디자인 코드의 역할 분리
-- API 응답을 화면용 데이터 구조로 변환하는 과정
 
 ---
 
-## 🚀 실행 방법
-
-### 1. Repository Clone
+## Run Locally
 
 ```bash
 git clone https://github.com/HWANG-SEONHO/react1.git
 cd react1
-```
-
-### 2. 패키지 설치
-
-```bash
 npm install
-```
-
-### 3. 개발 서버 실행
-
-```bash
 npm run dev
 ```
 
-기본 개발 주소:
+개발 서버 기본 주소:
 
 ```text
 http://localhost:5173
 ```
 
+> `/api` 요청은 `vite.config.js`의 개발용 proxy 설정을 사용합니다. 백엔드 서버 상태에 따라 일부 기능은 로컬에서 별도 서버 연결이 필요할 수 있습니다.
+
 ---
 
-## 📜 Scripts
+## Scripts
 
 | 명령어 | 설명 |
 |---|---|
@@ -213,28 +242,22 @@ http://localhost:5173
 
 ---
 
-## 🎯 프로젝트에서 중요하게 본 부분
+## Portfolio Point
 
-이 프로젝트에서는 단순히 완성된 화면을 만드는 것보다 다음 내용을 직접 읽고 설명할 수 있도록 코드를 구성했습니다.
+이 프로젝트에서 가장 중요하게 본 것은 완성된 화면만 만드는 것이 아니라, 아래 흐름을 **직접 읽고 수정할 수 있는 코드 구조**로 만드는 것입니다.
 
-> **사용자 입력 → State → Event → API → Response → State 변경 → 화면 갱신**
-
-새 기능을 추가할 때도 이 흐름을 기준으로 코드가 어디에서 시작되고 어디에서 화면으로 연결되는지 추적하는 것을 목표로 합니다.
-
----
-
-## 👨‍💻 Author
-
-**HWANG-SEONHO**
-
-- GitHub: [HWANG-SEONHO](https://github.com/HWANG-SEONHO)
-- Repository: [react1](https://github.com/HWANG-SEONHO/react1)
+> **User Input → State → Event → API → Response → State Update → UI**
 
 ---
 
 <div align="center">
 
-### PKNU AI Campus
-**AI · PEOPLE · TOMORROW**
+### HWANG-SEONHO
+
+[GitHub](https://github.com/HWANG-SEONHO) · [Repository](https://github.com/HWANG-SEONHO/react1)
+
+<br />
+
+**PKNU AI Campus — AI · PEOPLE · TOMORROW**
 
 </div>
